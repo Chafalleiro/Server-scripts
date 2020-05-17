@@ -1,39 +1,23 @@
 === Server scripts ===
 == Description ==
 
-Scripts to hel a home server run
+Scripts to help run a home server.
 
 
 Usage
 -----
-Copy the files in a dirtectory that suits you, Edit the Files to match your desired route to the logs otuputted by the scripts.
+Copy the files in a directory that suits you, Edit the Files to match your desired route to the logs otuputted by the scripts.
 You can also use cron to schedule the execution.
 
-## Admin menu
+## DYNDNS_by_API.sh
 
-* The admin can choose up to five different themes from the installed ones to be changed by selecting them in a drop down at the beginning of each tab of the configuration page. Note that you can select the same theme several times if you run out of mods.
-* You can force the selector to be displayed at the top of the page instead of using a widget or a shortcode.
-* You can configure the style of the selector for each theme.
-* At each theme tab the admin can set up to ten color modifications to classes or individual elements.
-	### Admin menuOptions fields
-	* Name an option to be displayed to the user. This option will be added in the select input field.
-	* Select wich type of style will be changed, class or individual element. If you used the web developer tools of yor browser to determine the elements you want to alter, an individual element is named by an "id", and class by "class". A class often has several elements. Remember to enter exactly the name, errors will be thrown if the names are incorrect and maybe the page functionality will be altered.</p>
-	* Type the element id or class to be altered.
-	* Select the color of the background in the color selector tool.
-	* Select the color of the font in the color selector tool.
-	* Choose the transparency of the background, it will be dinamically updated over an image below.
-	* Choose the transparency of the text, it will be dinamically updated over an image below.
-	* The option button indicates if the edited option will be used by the plugin. No options will be added if they aren't active.
-	* Save yor changes clicking the blue button at the end of the page</p>
 	
 ### Displaying the select drop down
 	* There are currently two options, fist is to add the "Style selector widget" that this plugin creates to any sidebar. You can also configure a title for the widget.
 	* The second is via a shortcode. Place the shortcode "[s_selector]" anywhere to display the drop down menu
 	* Additionally is a last minute adittion, you can uncoment the las line of the widget-selector.php file in the /public/partials dir of the pulugin directory using the wordpress plugin editor to show the drop down at the start of each page.
 
-## Frontend
-	* The user can choose between a default "Restore" option, and the ones defined by you. This option is persistent.
-	* The user can select the size of the text. This option is not persistent.
+## status.sh
 	
 == Installation ==
 
