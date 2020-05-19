@@ -33,7 +33,7 @@ You can also use cron to schedule the execution. The fields that you need to edi
 
 - DEFAULT_DIR="/var/log/NWStatus/"   - Put here the path to your log directory
 - LOGFILE="$DEFAULT_DIR""status.log" -  The name of the log file
-- STATUSFILE="$DEFAULT_DIR""ststus.txt" - The name of the check network status file
+- STATUSFILE="$DEFAULT_DIR""status.txt" - The name of the check network status file
 
 ## == Installation ==
 

@@ -6,7 +6,7 @@
 #Edit this as needed
 DEFAULT_DIR="/var/log/NWStatus/"
 LOGFILE="$DEFAULT_DIR""status.log"
-STATUSFILE="$DEFAULT_DIR""ststus.txt"
+STATUSFILE="$DEFAULT_DIR""status.txt"
 ####################################################
 
 STATUS=$(nmcli networking connectivity)
