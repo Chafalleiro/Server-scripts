@@ -21,6 +21,8 @@ You can also use cron to schedule the execution. The fields that you need to edi
 
 - IPFILE="$DEFAULT_DIR""**ip.txt**" - The name of the check IP file
 
+- APIURL="https://api.1984.is/1.0/freedns/?apikey=" - Copy here the start of the code provided by your DNS server provider. This is a generic generic example by 1984 hosting.
+
 - API="**YOUR_API_KEY**" - Important, the API key that your DNS server provided you
 
 - DOMAINS=( "**domain1.tld1" "domain2.tld2" "sub3.domain3.tld3**" ) - A list of domains and subdomains that uses the IP that you are renewing.
@@ -49,4 +51,6 @@ Release.
 
 #### == Files explanation ==
 
-* DYNDNS_by_API.sh Script that check own IP, creates and uses
+* DYNDNS_by_API.sh Script that check own IP, creates and uses a log file and a ip file.
+* status.sh Script that check conectivity, creates and uses a log file and a status of the connection file.
+

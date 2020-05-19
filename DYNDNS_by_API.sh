@@ -11,9 +11,10 @@
 DEFAULT_DIR="/var/log/DynDNS_API/"
 LOGFILE="$DEFAULT_DIR""1984_dyn.log"
 IPFILE="$DEFAULT_DIR""ip.txt"
-API="YOUR_API_KEY"
+APIURL="https://api.1984.is/1.0/freedns/?apikey="
+API="YOUR_API_KEY_HERE"
 # List the domains you neeed to update
-DOMAINS=( "domain1.tld1" "domain2.tld2" "sub3.domain3.tld3" )
+DOMAINS=( "domain1.tld" "mail.domain1.tld" "www.domain1.tld" "domain2.tld")
 ####################################################
 
 #Get datetime
@@ -23,7 +24,7 @@ now=`date +"%Y-%m-%d %H:%M:%S"`
 IP=$( curl -s ifconfig.me )
 
 #Check if working files exist, if not create them. If IP file exists, pass value to var and update IP.
-if [ -f "$DEFAULT_DIR"1984_dyn.log ]; then
+if [ -f "$LOGFILE" ]; then
     IPANT=$(cat "$IPFILE")
     echo ${IP} > "$IPFILE"
 else
@@ -33,7 +34,6 @@ else
     echo ${IPANT} >> "$IPFILE"
     echo {$now} "Created 1984 log and IP files" >> "$LOGFILE"
 fi
-
 #Check if the gotten ip is valid
 TEST=$( echo $IP | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" | wc -w )
 if [ "$TEST" = "1" ]; then
@@ -44,7 +44,8 @@ if [ "$TEST" = "1" ]; then
                 for i in "${DOMAINS[@]}"
 					do
 						: 
-						URL="https://api.1984.is/1.0/freedns/?apikey=$API&domain=$i&ip=${IP}"
+						#URL="https://api.1984.is/1.0/freedns/?apikey=$API&domain=$i&ip=${IP}"
+						URL="$APIURL$API&domain=$i&ip=${IP}"
 						exit+=$( curl -s $URL )
 					done
 				echo {$now} "$exit"  >> "$LOGFILE"
@@ -52,7 +53,7 @@ if [ "$TEST" = "1" ]; then
                 echo {$now} "ip Address $IP unchanged" >> "$LOGFILE"
         fi
 else
-        echo {$now} "Invalid IP, Network problem, logging"  >> "$LOGFILE"
+        echo {$now} "Invalid IP, Network problem, logging. IP got is: $IP"  >> "$LOGFILE"
         #If we use some sort of network monitor, code could go here
 fi
 #END of script
