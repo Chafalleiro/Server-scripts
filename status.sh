@@ -13,7 +13,7 @@ STATUS=$(nmcli networking connectivity)
 now=`date +"%Y-%m-%d %H:%M:%S"`
 
 if [ -f "$LOGFILE" ]; then
-    STANT=$(cat /var/log/NWStatus/status.txt)
+    STANT=$(cat "$STATUSFILE")
 else
     echo "No NWSstatus files found, creating..."
     mkdir "$DEFAULT_DIR"
@@ -34,3 +34,4 @@ else
     echo ${now} ${STATUS} >> "$LOGFILE"
     echo $STATUS > "$STATUSFILE"
 fi
+#END of script

@@ -55,4 +55,4 @@ else
         echo {$now} "Invalid IP, Network problem, logging"  >> "$LOGFILE"
         #If we use some sort of network monitor, code could go here
 fi
-#END od script
+#END of script
