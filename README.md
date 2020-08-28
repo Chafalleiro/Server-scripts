@@ -71,7 +71,7 @@ You can also use cron to schedule the execution. The fields that you need to edi
 
 - IP6FILE="$DEFAULT_DIR""**ip6.txt**" - The name of the check IPv6 file
 
-- APIURL="https://api.1984.is/1.0/freedns/?apikey=" - Copy here the start of the code provided by your DNS server provider. This is a generic generic example by Cloudflare.
+- APIURL="https://api.cloudflare.com/client/v4" - Copy here the start of the code provided by your DNS server provider. This is a generic generic example by Cloudflare.
 
 - EMAIL="**YOUR_EMAIL_HERE**" The email you use to login.
 
